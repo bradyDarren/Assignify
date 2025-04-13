@@ -15,10 +15,6 @@ partner_dict = {row.ID:{'Name':row.Name,'Shift':row.Team,
                           for (_, row) in partner_data.iterrows()}
 # print(partner_dict)
 
-# Information for a BED BUTTON
-# for p in partner_dict:
-#     if partner_dict[p]['Shift'] == 'BED': 
-
 p = Partners(partner_dict)
-print(p.employee_list('BED'))
+print(p.lift_certified(False))
 
