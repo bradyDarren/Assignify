@@ -3,8 +3,6 @@ import random
 
 class Partners: 
 
-    def __init__(self, name, shift):
-        pass
     def employee_list(self):
         pass
 
