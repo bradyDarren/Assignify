@@ -1,7 +1,5 @@
-class Tasks: 
-    def __init__(self):
-        pass
-    
+class Tasks:  
+       
     def task_list(self):
         pass
     
