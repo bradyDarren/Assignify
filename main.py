@@ -1,26 +1,24 @@
 import pandas as pd
 import random
+from partners import Partners
 
 # reading of our CSV file containing partner information
 partner_data = pd.read_csv(filepath_or_buffer = "Partners.csv")
-print(partner_data['Name'][0])
 
-# partner_data.insert(0,'ID',None)
-
-# id = 1
-# for index,  row  in partner_data.iterrows():
-#     print(row['Name'])
+# added Employess ID into csv file - making it what it is now. 
+# partner_data.insert(0,'ID',range(1,len(partner_data)+1))
+# partner_data.to_csv('Partners.csv', index=False)
 
 # Create a dictionary from the Partner.csv file.
-# partner_dict = {row.Name:{'Shift':row.Team, 
-#                           "Lift": row.lift_cert} 
-#                           for (_, row) in partner_data.iterrows()}
-# # print(partner_dict)
+partner_dict = {row.ID:{'Name':row.Name,'Shift':row.Team, 
+                          'Lift': row.lift_cert} 
+                          for (_, row) in partner_data.iterrows()}
+# print(partner_dict)
 
+# Information for a BED BUTTON
 # for p in partner_dict:
 #     if partner_dict[p]['Shift'] == 'BED': 
-#         print(p)
 
-# for p in partner_data.iterrows():
-#     partner_dict[partner_data['Name']] = {'Shift':partner_data['Team'],'Lift':partner_data['lift_cert']}
+p = Partners(partner_dict)
+print(p.employee_list('BED'))
 
