@@ -14,7 +14,10 @@ class Partners:
                 e_list.append(self.employee_data[id]["Name"])
         return e_list
                 
-
-
-    def lift_certified(Self):
-        pass
+    def lift_certified(self, status):
+        cert_list = []
+        for id in self.employee_data:
+            if self.employee_data[id]['Lift'] == status:
+                cert_list.append(self.employee_data[id]['Name'])
+        return cert_list
+        
