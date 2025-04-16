@@ -13,7 +13,7 @@ class Partners:
             if self.employee_data[id]['Shift'] == shift:
                 e_list.append(self.employee_data[id]["Name"])
         return e_list
-                
+# returns a list of certifed or uncertified forklift employees           
     def lift_certified(self, status):
         cert_list = []
         for id in self.employee_data:
