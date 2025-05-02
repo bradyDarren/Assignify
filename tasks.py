@@ -1,4 +1,5 @@
 import pandas as pd
+import random
 
 class Tasks:  
 
@@ -24,3 +25,23 @@ class Tasks:
                            for (_, row) in self.df.iterrows()}
         
         return assignment_dict
+
+class TaskSelection: 
+
+    def __init__(self, task_data):
+        self.task_data = task_data
+        self.rand_assign = None
+
+    def assign_task(self):
+        self.rand_assign = random.choice(self.task_data)
+        return self.rand_assign
+    
+    def remove_assignment(self):
+        if self.rand_assign in self.task_data:
+            if self.task_data[self.rand_assign] > 0:
+                self.task_data[self.rand_assign] = self.task_data[self.rand_assign] - 1
+            else: 
+                self.assign_task()
+                self.remove_assignment()
+
+
