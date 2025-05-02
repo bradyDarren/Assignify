@@ -2,6 +2,7 @@ import pandas as pd
 
 class PartnerData: 
 
+#constructor method used to gain acces the users CSV file.
     def __init__(self, d):
         self.d = d
         self.df = None
@@ -11,7 +12,7 @@ class PartnerData:
         self.df = pd.read_csv(filepath_or_buffer = self.d)
         return self.df
 
-# converting the data using a dictionary_list
+# converting the data using a Dictionary Comprehension.
     def convert_data(self):
 
         if self.df is None: 
@@ -20,7 +21,7 @@ class PartnerData:
         required_columns = ['ID', 'Name', 'Team', 'lift_cert']
         for col in required_columns: 
             if col not in self.df.columns: 
-                raise ValueError(f"Column {col} is missing from the dataset, Please ensure it is included")
+                raise ValueError(f"Column {col} is missing from the dataset, Please ensure it is included.")
 
         data_dict = {row.ID:{'Name':row.Name,'Shift':row.Team, 
                           'Lift': row.lift_cert} 
