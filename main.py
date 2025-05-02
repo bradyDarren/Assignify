@@ -1,6 +1,12 @@
 import random
 from partners import Partners
-from data import Data
+from data import PartnerData
+
+get_data = PartnerData('Partners.csv')
+get_data.read_data()
+data_dict = get_data.convert_data()
+
+
 
 # # reading of our CSV file containing partner information
 # partner_data = pd.read_csv(filepath_or_buffer = "Partners.csv")
