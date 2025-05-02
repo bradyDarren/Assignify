@@ -1,11 +1,14 @@
-import random
 from partners import Partners
 from data import PartnerData
+from tasks import Tasks
 
-get_data = PartnerData('Partners.csv')
-get_data.read_data()
-data_dict = get_data.convert_data()
+partner_data = PartnerData('Partners.csv')
+partner_data.read_data()
+data_dict = partner_data.convert_data()
 
+assignment_data = Tasks('Assignments.csv')
+assignment_data.read_assignment()
+assignment_dict = assignment_data.task_list()
 
 
 # # reading of our CSV file containing partner information
